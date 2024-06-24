@@ -5,7 +5,10 @@ The benifits of it can be
 
 Determine the resources and in case of shortage, find the priority.
 
+By analyzing the messages it can identify the needs.
 
+
+************************************************************************************
 
 Process_data.py contains the ETL pipeline that cleans data and stores in database.
 
