@@ -141,13 +141,22 @@ def evaluate_model(model, X_test, Y_test, category_names):
 def save_model(model, model_filepath):
     '''
     save_model
-    
-    
+    save the model in a pickle file
+
+    Input:
+    model    The pipeline
+    model_filepath    The path to save the pickle file
+    '''
     with open(model_filepath, 'wb') as file:
         pickle.dump(model, file)
 
 
 def main():
+    '''
+    main
+    The main method that calls other methods
+    '''
+    
     if len(sys.argv) == 3:
         database_filepath, model_filepath = sys.argv[1:]
         print('Loading data...\n    DATABASE: {}'.format(database_filepath))
