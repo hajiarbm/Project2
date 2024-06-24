@@ -1,5 +1,5 @@
 # Project2
-Disaster Response project tries to improve the efficiency in critical moments. It is based on messages that was sent during disasters.
+Disaster Response project tries to improve the efficiency in critical moments. It is based on messages that were sent during disasters.
 
 The benifits of this project can be:
 
