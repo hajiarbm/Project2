@@ -18,6 +18,19 @@ train_classifier.py runs ML pipeline that trains classifier and saves the inform
 
 run.py creates plots on the web
 
+
+- Root Directory
+    - data
+        - process_data.py
+        - File 1.1.1
+        - File 1.1.2
+  
+    - models
+        - File 2.1
+        - File 2.2
+    - app
+      
+
 # Disaster Response Pipeline Project
 
 ### Instructions:
