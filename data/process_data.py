@@ -6,9 +6,13 @@ def load_data(messages_filepath, categories_filepath):
     '''
      load_data
      load data from files and merge them to create a dataframe
+     
      Input:
      messages_filepath     file path to messages csv file
      categories_filepath   file path to categories csv file 
+
+     Returns:
+     df    Merged messages and categories information
     '''
     messages = pd.read_csv(messages_filepath)
     categories = pd.read_csv(categories_filepath)
@@ -16,6 +20,16 @@ def load_data(messages_filepath, categories_filepath):
     return df
 
 def clean_data(df):
+    '''
+    clean_data
+    cleans the data, remove nans and create new columns
+
+    Input:
+    df    Dataframe based on messages and categories
+
+    Returns:
+    df    The cleaned dataframe
+    '''
     categories = df['categories'].str.split(';', expand = True)
     # select the first row of the categories dataframe
     row = categories.loc[0,:]
@@ -41,6 +55,13 @@ def clean_data(df):
     
     
 def save_data(df, database_filename):
+   '''
+   save_data
+   saves the data in the database
+
+   Input:
+   df    Dataframe based on messages and categories
+   '''
    path = 'sqlite:///'+database_filename  #+'.db'
    print(path)
    engine = create_engine(path)
@@ -48,6 +69,10 @@ def save_data(df, database_filename):
    print(database_filename)
 
 def main():
+    '''
+    main
+    main method to call the methods
+    '''
     if len(sys.argv) == 4:
 
         messages_filepath, categories_filepath, database_filepath = sys.argv[1:]
