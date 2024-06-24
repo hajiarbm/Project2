@@ -26,9 +26,12 @@ run.py creates plots on the web
         - disaster_categories.csv
   
     - models
-        - File 2.1
-        - File 2.2
+        - train_classifier.py
     - app
+        - run.py
+        - templates
+            - master.html
+            - go.html
       
 
 # Disaster Response Pipeline Project
