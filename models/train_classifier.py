@@ -124,10 +124,7 @@ def build_model():
 
     # Instantiate GridSearchCV
     grid_search = GridSearchCV(pipeline, param_grid, cv=5)
-    return pipeline
-
- 
-    return pipeline
+    return grid_search
 
  
 
