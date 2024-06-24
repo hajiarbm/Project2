@@ -1,13 +1,15 @@
 # Project2
-Disaster Response project tries to improve the efficiency in critical moments. 
+Disaster Response project tries to improve the efficiency in critical moments. It is based on messages that was sent during disasters.
 
-The benifits of it can be
+The benifits of this project can be:
 
-Determine the resources and in case of shortage, find the priority.
+1) Determine the resources and in case of shortage, find the priority.
 
-By analyzing the messages it can identify the needs.
+2) By analyzing the messages it can identify the needs.
 
+3) Understanding the text can be helpful to design a system that can understand messages in defferent languages.
 
+4) Can be used to categorize the emergencies effectively.
 ************************************************************************************
 
 Process_data.py contains the ETL pipeline that cleans data and stores in database.
