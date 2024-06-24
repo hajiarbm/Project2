@@ -100,7 +100,7 @@ def build_model():
     build_model
     Create the pipeline
 
-    Returns
+    Returns:
     pipeline    Returns the pipeline
     '''
     pipeline = Pipeline([
