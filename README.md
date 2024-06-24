@@ -1,4 +1,12 @@
 # Project2
+Disaster Response project tries to improve the efficiency in critical moments. 
+
+The benifits of it can be
+
+Determine the resources and in case of shortage, find the priority.
+
+
+
 Process_data.py contains the ETL pipeline that cleans data and stores in database.
 
 train_classifier.py runs ML pipeline that trains classifier and saves the information.
