@@ -39,7 +39,7 @@ def load_data(database_filepath):
     path = 'sqlite:///'+database_filepath
     
     engine = create_engine(path)
-    df = pd.read_sql_table('mytable', engine)  
+    df = pd.read_sql_table('mytable2', engine)  
     X = df.drop([ 'id', 'original' , 'genre' , 'related', 'request', 'offer',
        'aid_related', 'medical_help', 'medical_products', 'search_and_rescue',
        'security', 'military', 'child_alone', 'water', 'food', 'shelter',
@@ -115,6 +115,18 @@ def build_model():
 
         ('clf', MultiOutputClassifier(RandomForestClassifier()))
     ])
+
+    param_grid = {
+    'clf__estimator__n_estimators': [100, 200, 300],
+    'clf__estimator__max_depth': [None, 5, 10],
+    'clf__estimator__min_samples_split': [2, 5, 10]
+    }
+
+    # Instantiate GridSearchCV
+    grid_search = GridSearchCV(pipeline, param_grid, cv=5)
+    return pipeline
+
+ 
     return pipeline
 
  
