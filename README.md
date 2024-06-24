@@ -22,8 +22,8 @@ run.py creates plots on the web
 - Root Directory
     - data
         - process_data.py
-        - File 1.1.1
-        - File 1.1.2
+        - disaster_messages.csv
+        - disaster_categories.csv
   
     - models
         - File 2.1
