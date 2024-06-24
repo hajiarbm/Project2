@@ -21,6 +21,19 @@ import pickle
 
 
 def load_data(database_filepath):
+    '''
+    load_data
+    loads the dataframe
+
+    Input:
+    database_filepath    The path to the database
+    
+    Returns:
+    X    The data
+    Y    The targets
+    categories The columns of the dataframe
+    '''
+    
     # load data from database
     path = 'sqlite:///'+database_filepath
     
@@ -53,7 +66,17 @@ def load_data(database_filepath):
     return X, Y, categories
 
 def tokenize(text):
+    '''
+    tokenize
+    Gets a text and extract the important words from it
 
+    Input:
+    text    A text message
+
+    Returns:
+    clean_tokens    important words from the message    
+    '''
+    
     # tokenize text
     tokens = word_tokenize(text)
     
@@ -72,6 +95,13 @@ def tokenize(text):
 
 
 def build_model():
+    '''
+    build_model
+    Create the pipeline
+
+    Returns
+    pipeline    Returns the pipeline
+    '''
     pipeline = Pipeline([
         ('features', FeatureUnion([
 
@@ -90,7 +120,16 @@ def build_model():
 
 
 def evaluate_model(model, X_test, Y_test, category_names):
-   
+    '''
+    evaluate_model
+    evaluate the model on the test data
+
+    Input:
+    model    The pipeline
+    X_test   The test data
+    Y_test   Target of the test data
+    category_names    the names of the categories
+    '''
     y_pred = model.predict(X_test)
     y_test = pd.DataFrame(Y_test)
     y_pred = pd.DataFrame(y_pred)
@@ -100,6 +139,9 @@ def evaluate_model(model, X_test, Y_test, category_names):
         print(classification_report(y_test.iloc[:, i], y_pred.iloc[:, i]))
 
 def save_model(model, model_filepath):
+    '''
+    save_model
+    
     
     with open(model_filepath, 'wb') as file:
         pickle.dump(model, file)
