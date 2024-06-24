@@ -3,7 +3,13 @@ from sqlalchemy import create_engine
 import pandas as pd
 
 def load_data(messages_filepath, categories_filepath):
-     
+    '''
+     load_data
+     load data from files and merge them to create a dataframe
+     Input:
+     messages_filepath     file path to messages csv file
+     categories_filepath   file path to categories csv file 
+    '''
     messages = pd.read_csv(messages_filepath)
     categories = pd.read_csv(categories_filepath)
     df = messages.merge(categories, left_on='id', right_on='id')
